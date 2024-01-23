@@ -1,0 +1,23 @@
+.header--wrapper {
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    font-family: var(--font)
+}
+
+.header--title {
+    margin-right: auto;
+}
+
+.header--links-wrapper {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header--links-wrapper > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: 500;
+}

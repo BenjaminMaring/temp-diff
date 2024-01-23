@@ -1,0 +1,13 @@
+.main--wrapper {
+    position: absolute; 
+    inset: calc(50% - 300px);
+    height: 600px;
+    width: 600px;
+    background: rgb(255,255,255);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.5) 100%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}

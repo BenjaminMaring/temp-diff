@@ -1,0 +1,15 @@
+:root {
+    --font: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.app--wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./assets/temp-diff-main.png");
+    background-position: center;
+}
