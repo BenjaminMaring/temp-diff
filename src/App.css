@@ -13,3 +13,7 @@
     background-image: url("./assets/temp-diff-main.png");
     background-position: center;
 }
+
+body {
+    overflow-x: hidden;
+}
