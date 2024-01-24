@@ -1,33 +1,29 @@
 import React from 'react'
 import './styles/City.css'
-import { LoadScript, GooglePlacesAutocomplete } from '@react-google-maps/api'
+import Auto from './Auto'
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 export default function City() {
-    const [locations, setLocations] = React.useState({ location1: "", location2: "" });
-    const API_KEY = import.meta.env.VITE_API_KEY
+    const [firstCoords, setFirstCoords] = React.useState( {
+        lat: null,
+        lng: null
+    })
+    const [secondCoords, setSecondCoords] = React.useState( {
+        lat: null,
+        lng: null
+    })
 
-    function updateLocation(e, locationNumber) {
-        const location = e.target.value
-        setLocations(prev => {
-            return (locationNumber === 1 ? {...prev, location1: location} : {...prev, location2: location})
-        })
-    }
-
-    function loadLocationInfo() {
-        console.log(locations)
-    }
-
-    const handlePlaceSelect = (place) => {
-        console.log('selected Place: ' + place)
+    function handleClick() {
+        console.log(firstCoords, secondCoords)
     }
 
     return (
         <div className="city--wrapper">
             <div className="city--box">
                 <div className="city--form-wrapper">
-                <LoadScript googleMapsApiKey={API_KEY}>
-      
-                </LoadScript>
+                    <Auto updateCoords={setFirstCoords}/>
+                    <button onClick={handleClick}>Click me</button>
+                    <Auto updateCoords={setSecondCoords}/>
                 </div>
             </div>
         </div>
