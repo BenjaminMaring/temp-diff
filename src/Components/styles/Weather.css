@@ -1,0 +1,29 @@
+.weather--wrapper {
+    z-index: 1;
+    font-family: var(--font);
+    display: flex;
+}
+
+.weather--inner-wrapper {
+    color: white;
+    text-align: center;
+}
+
+.weather--title {
+    
+    font-size: 1.5rem;
+}
+
+.weather--temp {
+    font-size: 3rem;
+    margin: 10px;
+}
+
+.weather--limits {
+    font-size: 1.1rem;
+    margin: 0px 0px 20px 0px;
+}
+
+.weather--sun {
+    font-size: 1.4rem;
+}

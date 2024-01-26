@@ -12,8 +12,8 @@
     min-height: 700px;
     background: linear-gradient(
         to right bottom,
-        rgba(170, 170, 170, 0.4),
-        rgba(134, 134, 134, 0.2)
+        rgba(131, 131, 131, 0.637),
+        rgba(59, 59, 59, 0.226)
     );
     backdrop-filter: blur(1rem);
     z-index: 1;
@@ -35,4 +35,23 @@
     display: flex; 
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.city--weather-btn {
+    width: 120px;
+    border-radius: 5px;
+    font-family: var(--font);
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(36, 36, 36);
+    color: white;
+}
+
+
+
+.city--data-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; 
 }
