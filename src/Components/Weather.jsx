@@ -2,7 +2,6 @@ import React from 'react';
 import './styles/Weather.css'
 
 export default function Weather({ data }) {
-    console.log(data);
     
     return(
             <div className="weather--wrapper">

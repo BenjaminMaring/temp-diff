@@ -7,7 +7,6 @@ export default function Auto({ address, setAddress }) {
 
     const handleSelect = async (value) => {
         setAddress(value);
-        console.log(address);
     }
 
     const autocompleteRender = ({ getInputProps, suggestions, loading }) => {

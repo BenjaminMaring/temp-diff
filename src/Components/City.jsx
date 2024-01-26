@@ -30,7 +30,7 @@ export default function City() {
             const data = await response.json()
             return data;
         } catch(e) {
-            console.log("error getting weather data: " + e)
+            window.alert("error getting weather data: " + e)
         }
     }
 
