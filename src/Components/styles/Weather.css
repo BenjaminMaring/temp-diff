@@ -24,6 +24,26 @@
     margin: 0px 0px 20px 0px;
 }
 
+.weather--weather-desc {
+    font-size: 1.4rem;
+    margin: 5px 0;
+}
+
+.weather--feels-like {
+    font-size: 1.4rem;
+    margin: 5px 0;
+}
+
 .weather--sun {
     font-size: 1.4rem;
+    margin: 5px 0px;
+}
+
+.weather--wind-speed {
+    font-size: 1.4rem;
+}
+
+.weather--humidity {
+    font-size: 1.4rem;
+    margin: 5px 0;
 }
