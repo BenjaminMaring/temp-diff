@@ -39,6 +39,27 @@ export default function City() {
         const data2 = await getWeatherData(address2)
         setFirstAddressData(data1);
         setSecondAddressData(data2);
+        updateLocalStorage(address1, address2);
+    }
+
+    function updateLocalStorage(address1, address2) {
+        let inquiries = JSON.parse(localStorage.getItem("recents"));
+        console.log(inquiries);
+
+        if (inquiries) {
+            if (inquiries.length >=7) {
+                inquiries.shift();
+                inquiries.push({first: address1, second: address2})
+            } else {
+                inquiries.push({first: address1, second: address2});
+            }
+            console.log(inquiries);
+            localStorage.setItem("recents", JSON.stringify(inquiries));
+            return;
+        } else {    
+            console.log("here")
+            localStorage.setItem("recents", JSON.stringify([{first: address1, second: address2}]));
+        }
     }
 
     return (

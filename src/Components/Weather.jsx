@@ -2,7 +2,6 @@ import React from 'react';
 import './styles/Weather.css'
 
 export default function Weather({ data }) {
-    console.log(data);
 
     function getTime(unixTime, timezone) {
         const date = new Date(unixTime * 1000 - timezone);

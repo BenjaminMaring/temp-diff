@@ -9,7 +9,7 @@ export default function Main() {
                 <h1>Temp Diff</h1>
                 <p>Compare two locations temperatures</p>
             </div>
-            <Link to="/temp">Get Started</Link>
+            <Link to="/compare">Get Started</Link>
         </div>
     )
 }
