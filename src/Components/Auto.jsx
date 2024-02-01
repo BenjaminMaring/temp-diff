@@ -5,6 +5,7 @@ import './styles/Auto.css'
 // Huge credit to Leigh Halliday on youtube for his Google Places - Autocomplete in React video
 export default function Auto({ address, setAddress }) {
 
+
     const handleSelect = async (value) => {
         setAddress(value);
     }

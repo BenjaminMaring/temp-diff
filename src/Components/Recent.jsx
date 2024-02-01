@@ -7,7 +7,9 @@ export default function Recents() {
 
     React.useEffect(() => {
         const searches = JSON.parse(localStorage.getItem("recents"));
-        setRecentSearches(searches.reverse());
+        if (searches) {
+            setRecentSearches(searches.reverse());
+        }
     }, [])
 
     function handleClick() {
