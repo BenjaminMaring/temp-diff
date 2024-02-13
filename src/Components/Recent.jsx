@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles/Recent.css'
+import { Link } from 'react-router-dom'
+import './styles/Recent.css';
 
 export default function Recents() {
     const [recentSearches, setRecentSearches] = React.useState([])
@@ -27,9 +28,9 @@ export default function Recents() {
                 <div className="recent--item-wrapper">
                     {item.second}
                 </div>
-                <button className="recent--button" onClick={handleClick}>
+                <Link className="recent--button" to={`/compare/${item.first}/${item.second}`}>
                     <i className="fa-solid fa-arrow-right"></i>
-                </button>
+                </Link>
             </div>
         )
     })

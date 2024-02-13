@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />}/>
-          <Route path="/compare" element={<City />}/>
+          <Route path="/compare/:search1?/:search2?" element={<City />}/>
           <Route path="/recent" element={<Recent />}/>
         </Routes>
       </BrowserRouter>
