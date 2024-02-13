@@ -6,7 +6,7 @@ import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import { useParams } from "react-router-dom";
 
 export default function City() {
-    const OPENWEATHER_KEY = process.env.VITE_OPENWEATHER_KEY;
+    const OPENWEATHER_KEY = import.meta.env.VITE_OPENWEATHER_KEY;
     const params = useParams();
 
     const [address1, setAddress1] = React.useState(params.search1 || "");
