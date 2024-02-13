@@ -3,15 +3,22 @@ import './styles/City.css'
 import Auto from './Auto'
 import Weather from './Weather'
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import { useParams } from "react-router-dom";
 
 export default function City() {
     const OPENWEATHER_KEY = import.meta.env.VITE_OPENWEATHER_KEY;
+    const params = useParams();
 
-    const [address1, setAddress1] = React.useState("");
-    const [address2, setAddress2] = React.useState("");
+    const [address1, setAddress1] = React.useState(params.search1 || "");
+    const [address2, setAddress2] = React.useState(params.search2 || "");
     const [firstAddressData, setFirstAddressData] = React.useState()
     const [secondAddressData, setSecondAddressData] = React.useState()
 
+    React.useEffect(() => {
+        if (params.search1 && params.search2) {
+            handleClick();
+        }
+    }, [])
 
     async function getCoords(address) {
         try {
@@ -44,20 +51,25 @@ export default function City() {
 
     function updateLocalStorage(address1, address2) {
         let inquiries = JSON.parse(localStorage.getItem("recents"));
-        console.log(inquiries);
 
         if (inquiries) {
+
+            //check to make sure its not a recently searched item
+            for (let i in inquiries) {
+                if (inquiries[i].first == address1 && inquiries[i].second == address2) {
+                    return;
+                }
+            }
             if (inquiries.length >=7) {
                 inquiries.shift();
                 inquiries.push({first: address1, second: address2})
             } else {
                 inquiries.push({first: address1, second: address2});
             }
-            console.log(inquiries);
+            
             localStorage.setItem("recents", JSON.stringify(inquiries));
             return;
         } else {    
-            console.log("here")
             localStorage.setItem("recents", JSON.stringify([{first: address1, second: address2}]));
         }
     }

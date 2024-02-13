@@ -4,7 +4,6 @@ import './styles/Recent.css';
 
 export default function Recents() {
     const [recentSearches, setRecentSearches] = React.useState([])
-    console.log(recentSearches);
 
     React.useEffect(() => {
         const searches = JSON.parse(localStorage.getItem("recents"));
@@ -13,9 +12,6 @@ export default function Recents() {
         }
     }, [])
 
-    function handleClick() {
-        console.log("clicked");
-    }
 
     let id = 0;
     const recentElems = recentSearches.map(item => {
